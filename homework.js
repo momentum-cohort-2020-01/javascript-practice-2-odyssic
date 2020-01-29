@@ -85,7 +85,7 @@ function average(numbers) {
 
 function minimum(numbers) {
     if (numbers.length > 0) {
-        return Math.min(numbers);
+        return Math.min(...numbers);
     }
 }
 
@@ -115,8 +115,24 @@ function minimum(numbers) {
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
 
+selectionSort(numbers) {
+    var sortednumbers = numbers.slice(0)
+        // for (let i = 0; i == Math.min(...sortednumbers); i++)
+        // i = sortednumbers.indexOf(i) {
+    for (let i = 0; i < numbers.length; i++) {
+        let m = Math.min(...sortednumbers.slice(i));
+        sortednumbers.splice(i, 0, m);
+        sortednumbers.splice(sortednumbers.indexOf(m) + 1, 1);
+    }
+    return sortednumbers;
+}
+
 // 7. Create a function called `textList` that takes an array and joins its elements
 // into a string separated by commas.
 //
 // For example, `textList(['Cadence', 'Ordel', 'Marion'])` results in the string
-// `"Cadence,Ordel,Marion"`
+// `"Cadence,Ordel,Mari
+
+// function textlist(numbers) {
+//     numbers.join(, )
+// }
