@@ -115,17 +115,16 @@ function minimum(numbers) {
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
 
-selectionSort(numbers) {
-    var sortednumbers = numbers.slice(0)
-        // for (let i = 0; i == Math.min(...sortednumbers); i++)
-        // i = sortednumbers.indexOf(i) {
+function selectionSort(numbers) {
+    var sortednumbers = numbers.slice(0);
     for (let i = 0; i < numbers.length; i++) {
         let m = Math.min(...sortednumbers.slice(i));
         sortednumbers.splice(i, 0, m);
-        sortednumbers.splice(sortednumbers.indexOf(m) + 1, 1);
+        sortednumbers.splice(sortednumbers.indexOf(m), 1);
     }
     return sortednumbers;
 }
+console.log(selectionSort([1, 4, 5, 3, 7, 8]));
 
 // 7. Create a function called `textList` that takes an array and joins its elements
 // into a string separated by commas.
@@ -134,5 +133,5 @@ selectionSort(numbers) {
 // `"Cadence,Ordel,Mari
 
 // function textlist(numbers) {
-//     numbers.join(, )
+//     return numbers.join(, );
 // }
