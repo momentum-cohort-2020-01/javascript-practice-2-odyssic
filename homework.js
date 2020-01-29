@@ -120,11 +120,12 @@ function selectionSort(numbers) {
     for (let i = 0; i < numbers.length; i++) {
         let m = Math.min(...sortednumbers.slice(i));
         sortednumbers.splice(i, 0, m);
-        sortednumbers.splice(sortednumbers.indexOf(m), 1);
+        sortednumbers.splice(sortednumbers.slice(i + 1).indexOf(m) + i + 1, 1);
     }
     return sortednumbers;
 }
-console.log(selectionSort([1, 4, 5, 3, 7, 8]));
+console.log(selectionSort([12, 4, 5, 8, 9, 2]));
+[2, 4, 2, 8, 2, 2];
 
 // 7. Create a function called `textList` that takes an array and joins its elements
 // into a string separated by commas.
@@ -132,6 +133,11 @@ console.log(selectionSort([1, 4, 5, 3, 7, 8]));
 // For example, `textList(['Cadence', 'Ordel', 'Marion'])` results in the string
 // `"Cadence,Ordel,Mari
 
-// function textlist(numbers) {
-//     return numbers.join(, );
-// }
+function textList(numbers) {
+    if (numbers.length == 0) {
+        return "";
+    }
+    return numbers.join();
+}
+
+console.log(textList(["test", "frank", "john"]));
